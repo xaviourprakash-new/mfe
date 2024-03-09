@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run build
-      - run: az storage blob upload -b $web -c $web -s dist --account-name mfecontainerstorage
+      - run: az storage blob upload -d $web -s dist --connection-string ${{ secrets.AZURE_STORAGE }} --account-name mfecontainerstorage
         # with:
         #   source_dir: './dist'
         #   container_name: '$web'
