@@ -21,7 +21,7 @@ jobs:
       - run: npm run build
       - uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: './build'
+          source_dir: './dist'
           container_name: '$web'
           connection_string: ${{ secrets.AZURE_STORAGE }}
           sync: 'true'
